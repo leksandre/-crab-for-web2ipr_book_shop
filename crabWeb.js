@@ -9,7 +9,7 @@ function scrollFunction() {
     console.log("Delayed for 1 second.");
     if (!active) {
         active = true;
-        for (let i = 0; i < 146; i++) {
+        for (let i = 0; i < 1500; i++) {
             if (writer.includes(i)) { continue; }
             var canvas = document.getElementById("page" + i);
             if (canvas) {
@@ -102,7 +102,9 @@ try {
 let timerId2 = setInterval(
     () => {
         scrollFunction();
-        container1.scroll(container1.scrollLeft, container1.scrollTop + 1000);
+        setTimeout(() => {
+            container1.scroll(container1.scrollLeft, container1.scrollTop + 1000); 
+        }, 10000);
     }
-    , 10000);
+    , 20000);
 
